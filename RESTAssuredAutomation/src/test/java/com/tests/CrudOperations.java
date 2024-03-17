@@ -6,8 +6,11 @@ package com.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.restassured.*;
+import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
+
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
 
 
 /**
@@ -19,8 +22,8 @@ import io.restassured.response.Response;
 public class CrudOperations {
 	
 	@Test
-	public void test_1() {
-		Response res=RestAssured.get("https://reqres.in/api/users?page=2");
+	public void test_page() {
+		Response res= get("https://reqres.in/api/users?page=2");
 	
 		System.out.println(res.getStatusCode());
 		System.out.println(res.getTime());
@@ -35,8 +38,8 @@ public class CrudOperations {
 	
 	
 	@Test
-	public void test_2() {
-		Response res=RestAssured.get("https://reqres.in/api/users/2");
+	public void test_users() {
+		Response res= get("https://reqres.in/api/users/2");
 	
 		System.out.println(res.getStatusCode());
 		System.out.println(res.getTime());
@@ -47,6 +50,20 @@ public class CrudOperations {
 		//Status code validation
 		int statusCode= res.getStatusCode();
 		Assert.assertEquals(statusCode, 200);
+	}
+	
+	
+	@Test
+	public void test_GetReq() {
+		
+		baseURI = "https://reqres.in/api";
+		
+		given().
+			get("/users?page=2").
+		then().
+			statusCode(200).
+			body("data[5].id",equalTo(12));
+		
 	}
 
 }

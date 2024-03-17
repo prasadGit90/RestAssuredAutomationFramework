@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-17T12:20:34Z" name="Default suite" finished-at="2024-03-17T12:20:36Z" duration-ms="2184">
+  <suite started-at="2024-03-17T23:41:15Z" name="Default suite" finished-at="2024-03-17T23:41:18Z" duration-ms="3041">
     <groups>
     </groups>
-    <test started-at="2024-03-17T12:20:34Z" name="Default test" finished-at="2024-03-17T12:20:36Z" duration-ms="2184">
+    <test started-at="2024-03-17T23:41:15Z" name="Default test" finished-at="2024-03-17T23:41:18Z" duration-ms="3041">
       <class name="com.tests.CrudOperations">
-        <test-method signature="test_1()[pri:0, instance:com.tests.CrudOperations@30c8681]" started-at="2024-03-17T12:20:34Z" name="test_1" finished-at="2024-03-17T12:20:36Z" duration-ms="2015" status="PASS">
+        <test-method signature="test_GetReq()[pri:0, instance:com.tests.CrudOperations@5cdec700]" started-at="2024-03-17T23:41:15Z" name="test_GetReq" finished-at="2024-03-17T23:41:17Z" duration-ms="2790" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_1 -->
-        <test-method signature="test_2()[pri:0, instance:com.tests.CrudOperations@30c8681]" started-at="2024-03-17T12:20:36Z" name="test_2" finished-at="2024-03-17T12:20:36Z" duration-ms="147" status="PASS">
+        </test-method> <!-- test_GetReq -->
+        <test-method signature="test_page()[pri:0, instance:com.tests.CrudOperations@5cdec700]" started-at="2024-03-17T23:41:17Z" name="test_page" finished-at="2024-03-17T23:41:18Z" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_2 -->
+        </test-method> <!-- test_page -->
+        <test-method signature="test_users()[pri:0, instance:com.tests.CrudOperations@5cdec700]" started-at="2024-03-17T23:41:18Z" name="test_users" finished-at="2024-03-17T23:41:18Z" duration-ms="84" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_users -->
       </class> <!-- com.tests.CrudOperations -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
