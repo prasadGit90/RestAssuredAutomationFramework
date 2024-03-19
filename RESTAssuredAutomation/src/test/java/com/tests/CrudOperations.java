@@ -3,14 +3,21 @@
  */
 package com.tests;
 
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
+
+import io.restassured.http.ContentType;
+import io.restassured.path.json.mapper.factory.JsonbObjectMapperFactory;
 import io.restassured.response.Response;
 
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -47,7 +54,7 @@ public class CrudOperations {
 		System.out.println(res.getStatusLine());
 		System.out.println(res.getHeader("content-type"));
 		
-		//Status code validation
+		//Status code validation for above request 
 		int statusCode= res.getStatusCode();
 		Assert.assertEquals(statusCode, 200);
 	}
@@ -56,6 +63,8 @@ public class CrudOperations {
 	@Test
 	public void test_GetReq() {
 		
+		
+
 		baseURI = "https://reqres.in/api";
 		
 		given().
@@ -64,6 +73,37 @@ public class CrudOperations {
 			statusCode(200).
 			body("data[5].id",equalTo(12));
 		
+		
+
+		
+	}
+	
+	@Test
+	public void testPost() {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+
+		//JsonObject coming from Json library
+		JSONObject request = new JSONObject();
+		
+		request.put("name", "Raju");
+		request.put("job", "Software");
+
+		System.out.println(request.toJSONString());
+
+		baseURI = "https://reqres.in/api";
+	
+		given().
+			header("Content-Type", "application/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(request.toJSONString());
+		when().
+			post("/users").
+		then().
+			statusCode(201).log().all();
+	
 	}
 
 }
