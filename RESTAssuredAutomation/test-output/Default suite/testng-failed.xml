@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.tests.CrudOperations">
+      <class name="day1.HTTPRequests">
         <methods>
-          <include name="testPost"/>
+          <include name="createUser"/>
+          <include name="updateUser"/>
         </methods>
-      </class> <!-- com.tests.CrudOperations -->
+      </class> <!-- day1.HTTPRequests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
