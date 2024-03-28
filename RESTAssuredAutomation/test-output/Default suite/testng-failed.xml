@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="day1.HTTPRequests">
+      <class name="parcingJsonResponseday4.parsingJSONResponse">
         <methods>
-          <include name="createUser"/>
-          <include name="updateUser"/>
+          <include name="testJsonResponse"/>
         </methods>
-      </class> <!-- day1.HTTPRequests -->
+      </class> <!-- parcingJsonResponseday4.parsingJSONResponse -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

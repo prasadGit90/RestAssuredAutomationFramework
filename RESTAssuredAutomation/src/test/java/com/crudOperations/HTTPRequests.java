@@ -1,7 +1,16 @@
-/**
- * 
- */
 package com.crudOperations;
+
+import static  io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+import org.testng.annotations.Test;
+import java.util.HashMap;
+
+import javax.management.InvalidApplicationException;
+import io.restassured.http.ContentType;
+
+
+
 
 /**
  * @author prasadkondeti
@@ -23,17 +32,7 @@ package com.crudOperations;
  Validation status code ,extract response, extract headers and coockies and response body
  
  */
-import static  io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
 
-import java.util.HashMap;
-
-import javax.management.InvalidApplicationException;
-
-import org.testng.annotations.Test;
-
-import io.restassured.http.ContentType;
 
 public class HTTPRequests {
 	
